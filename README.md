@@ -4,7 +4,7 @@
 
 ```hcl
 module "ca" {
-  source = "./_ca"
+  source = "./terraform-tls-simpleRSA"
 
   dns_names = [
     "simplersa001.sinn.consulting",
@@ -12,10 +12,7 @@ module "ca" {
     "simplersa003.sinn.consulting",
   ]
 
-  client_cert  = true
   organization = "SinnConsulting"
-  algorithm    = "RSA"
-  rsa_bits     = "4096"
 }
 ```
 
