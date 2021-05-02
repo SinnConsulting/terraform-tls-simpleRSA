@@ -2,10 +2,28 @@
 
 ### How to use
 
+#### hashicorp registry
 ```hcl
-module "ca" {
+module "simpleRSA" {
+  source  = "SinnConsulting/simpleRSA/tls"
+  # version = "<version>"
+
+  # insert the 2 required variables here
+  dns_names = [
+    "simplersa001.sinn.consulting",
+    "simplersa002.sinn.consulting",
+    "simplersa003.sinn.consulting",
+  ]
+
+  organization = "SinnConsulting"
+}
+```
+#### local
+```hcl
+module "simpleRSA" {
   source = "./terraform-tls-simpleRSA"
 
+  # insert the 2 required variables here
   dns_names = [
     "simplersa001.sinn.consulting",
     "simplersa002.sinn.consulting",
